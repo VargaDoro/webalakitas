@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+
+main{
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+article, aside, header, footer, nav, .Tartalom {
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: 200px 200px;
+}
+
+main{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "h h"
+        "n n"
+        "a as"
+        "f f"
+    ;
+}
+
+header{
+    grid-area: h;
+}
+
+nav{
+    grid-area: n;
+}
+
+article{
+    grid-area: a;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 10px;
+}
+
+aside{
+    grid-area: as;
+}
+
+footer{
+    grid-area: f;
+}
+
+@media screen and (max-width: 600px){
+    nav ul{
+        grid-template-columns: 1fr;
+    }
+
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "h"
+            "n"
+            "as"
+            "a"
+            "f"
+        ;
+    }
+}
